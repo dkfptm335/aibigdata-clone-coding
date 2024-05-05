@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Header} from "./layouts/Header";
+import styled from "styled-components";
+import {Footer} from "./layouts/Footer";
+import {Route, Routes} from "react-router-dom";
+import {Main} from "./pages/main";
+import {Detail} from "./pages/detail"
+import {Schedule} from "./pages/schedule"
+import {Apply} from "./pages/apply";
+import {Award} from "./pages/award";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Wrap>
+            <Header/>
+
+            <Routes>
+                <Route path="/" element={<Main/>}/>
+                <Route path="/detail" element={<Detail/>}/>
+                <Route path="/schedule" element={<Schedule/>}/>
+                <Route path="/apply" element={<Apply/>}/>
+                <Route path="/award" element={<Award/>}/>
+                {/*<Route path="*" element={<Notfound/>}/>*/}
+            </Routes>
+
+            <Footer/>
+        </Wrap>
+    );
 }
+
+const Wrap = styled.main`
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+    width: 1200px;
+`;
 
 export default App;
