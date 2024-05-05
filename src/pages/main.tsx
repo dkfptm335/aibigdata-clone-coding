@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Gallery} from "../components/gallery"
 
 export const Main = () => {
     return (
@@ -17,6 +18,9 @@ export const Main = () => {
                     alt='go preRegister form button'
                 />
             </Button>
+            <div>
+                <Gallery />
+            </div>
         </Wrap>
     )
 };
@@ -41,7 +45,7 @@ export const ImageButtonBase = styled.button`
 `;
 
 const Button = styled(ImageButtonBase)`
-    bottom: 168px;
+    bottom: 968px;
     left: 50%;
     transform: translateX(-50%);
     width: 1140px;
